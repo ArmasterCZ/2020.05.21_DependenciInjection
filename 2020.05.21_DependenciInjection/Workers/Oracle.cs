@@ -1,46 +1,60 @@
 ﻿using _2020._05._21_DependenciInjection.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _2020._05._21_DependenciInjection
 {
-    public class Oracle : IOracle, IDbConnector
+    internal class Oracle : IOracle
     {
-        public EventHandler<string> LogInfo;
+        private ILogger logger;
 
-        public EventHandler<string> LogError;
+        public string ConnectionString { get; set; }
 
-        public Oracle(string connectionString)
+        public Oracle(string connectionString, ILogger logger)
         {
-
+            this.ConnectionString = connectionString;
+            this.logger = logger;
+            logger.LogInfo($"Created instance of Oracle with conn string ({ConnectionString})");
         }
 
         public void CheckAccess()
         {
-            Console.WriteLine("Access checked");
+            logger.LogInfo($"Query - Access checked");
         }
 
         public void ConnectToDb()
         {
-            Console.WriteLine("DB connected in Oracle");
+            logger.LogInfo($"Query - DB connected in Oracle {ConnectionString}");
         }
 
-        public void CreateNewPc()
+        public bool CreateNewPc()
         {
-            Console.WriteLine("Creating new PC in Oracle");
+            logger.LogInfo("Query - Creating new PC in Oracle");
+            return true;
         }
 
         public void CreateNewRecord()
         {
-            Console.WriteLine("Creating new Record in Oracle");
+            File.WriteAllText("Record.txt", "Byl zapsán record.");
+            //logger.LogInfo("Query - Creating new Record in Oracle");
         }
 
         public string GetPcDescription()
         {
-            return "PC Win 10 OOracle";
+            return "PC Win 10 Oracle";
+        }
+
+        public List<PcDto> GetListOfPcs()
+        {
+            return new List<PcDto>() {
+                new PcDto() { Id = 1, Name = "PC1234", Description = "Pc of somebody ot there" },
+                new PcDto() { Id = 2, Name = "jvPc", Description = "Read this carefully" },
+                new PcDto() { Id = 3, Name = "NomadForever", Description = "Join our discord server. Pleeease." }
+            };
         }
     }
 }

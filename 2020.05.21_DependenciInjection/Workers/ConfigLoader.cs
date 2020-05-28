@@ -9,16 +9,17 @@ namespace _2020._05._21_DependenciInjection
 {
     internal class ConfigLoader : IConfigLoader
     {
-        private readonly string path;
+        private string path;
 
-        public ConfigLoader(string path)
+        public ConfigLoader()
         {
-            this.path = path;
+            
         }
 
-        public IConfig GetConfig()
+        public IConfig GetConfig(string path)
         {
-            return new Config() { ConnectionString = $"something {path}" };
+            this.path = path;
+            return new Config() { ConnectionString = $"ConStringFrom-{this.path}", TimerTime = 10 , UserName = "Am", UserPass = "ShallNotPass" };
         }
     }
 }

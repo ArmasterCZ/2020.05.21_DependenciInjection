@@ -18,12 +18,12 @@ namespace _2020._05._21_DependenciInjection
 
         public void LogError(string message)
         {
-            Console.WriteLine($"Writing error log {message} logger2");
+            Console.WriteLine($"Lg2 error ({message})");
         }
 
         public void LogInfo(string message)
         {
-            Console.WriteLine($"Writing info log {message} logger2");
+            Console.WriteLine($"Lg2 ({message})");
         }
     }
 }

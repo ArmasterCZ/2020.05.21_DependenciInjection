@@ -1,11 +1,14 @@
-﻿namespace _2020._05._21_DependenciInjection.Interfaces
+﻿using System.Collections.Generic;
+
+namespace _2020._05._21_DependenciInjection.Interfaces
 {
-    public interface IOracle
+    internal interface IOracle : IDbConnector
     {
         void ConnectToDb();
         void CheckAccess();
-        void CreateNewPc();
+        bool CreateNewPc();
         void CreateNewRecord();
         string GetPcDescription();
+        List<PcDto> GetListOfPcs();
     }
 }

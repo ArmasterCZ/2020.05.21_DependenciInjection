@@ -24,8 +24,8 @@ namespace TestProject2
         [Theory]
         [InlineData("1", "2","2")]
         [InlineData("1", "2 ", "3")]
-        [InlineData("11", "22", "1")]
-        public void Test2(string input1, string input2, string expectedOutput)
+        [InlineData("11", "22", "4")]
+        public void RandomShowOfMultipleDataTest(string input1, string input2, string expectedOutput)
         {
             int value = input1.Length + input2.Length;
             Assert.Equal(value.ToString(), expectedOutput);

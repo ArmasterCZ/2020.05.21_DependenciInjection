@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 
 namespace _2020._05._21_DependenciInjection
 {
+    
     internal class XmlWorker : IXmlWorker
     {
         /// <summary>
@@ -72,7 +73,6 @@ namespace _2020._05._21_DependenciInjection
             }
         }
 
-
         /// <summary>
         /// Serialize object to xml string
         /// </summary>
@@ -107,4 +107,5 @@ namespace _2020._05._21_DependenciInjection
 
 
     }
+    
 }

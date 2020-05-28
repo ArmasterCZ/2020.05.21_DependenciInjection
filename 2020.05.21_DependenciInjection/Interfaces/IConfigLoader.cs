@@ -2,6 +2,6 @@
 {
     interface IConfigLoader
     {
-        IConfig GetConfig();
+        IConfig GetConfig(string path);
     }
 }

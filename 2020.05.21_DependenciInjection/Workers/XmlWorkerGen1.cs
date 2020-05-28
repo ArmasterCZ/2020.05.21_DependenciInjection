@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace _2020._05._21_DependenciInjection
 {
-    internal class XmlWorkerGen1<T> : IXmlWorkerGen<T>
+    internal class XmlWorkerGen1<T> : IXmlWorkerGen<T> // where T : IUser
     {
         /// <summary>
         /// Deserialize file to xml
@@ -72,6 +72,17 @@ namespace _2020._05._21_DependenciInjection
             }
         }
 
+        /// <summary>
+        /// Deserialize XmlText to ref
+        /// </summary>
+        public void LoadFromXmlString(string xmlText, ref object output)
+        {
+            using (var stringReader = new System.IO.StringReader(xmlText))
+            {
+                var serializer = new XmlSerializer(output.GetType());
+                output = serializer.Deserialize(stringReader);
+            }
+        }
 
         /// <summary>
         /// Serialize object to xml string

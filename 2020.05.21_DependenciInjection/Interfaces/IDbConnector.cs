@@ -1,10 +1,13 @@
-﻿namespace _2020._05._21_DependenciInjection.Interfaces
+﻿using System.Collections.Generic;
+
+namespace _2020._05._21_DependenciInjection.Interfaces
 {
-    interface IDbConnector
+    internal interface IDbConnector
     {
         void ConnectToDb();
 
-        void CreateNewPc();
+        bool CreateNewPc();
         void CreateNewRecord();
+        List<PcDto> GetListOfPcs();
     }
 }
