@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="Interfaces\IBusinessLogic.cs" />
     <Compile Include="Interfaces\IDbConnector.cs" />
     <Compile Include="Interfaces\IUser.cs" />

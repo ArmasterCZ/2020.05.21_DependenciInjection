@@ -50,6 +50,8 @@ namespace _2020._05._21_DependenciInjection
 
         public List<PcDto> GetListOfPcs()
         {
+            logger.LogInfo("Query - getting list of PC");
+
             return new List<PcDto>() {
                 new PcDto() { Id = 1, Name = "PC1234", Description = "Pc of somebody ot there" },
                 new PcDto() { Id = 2, Name = "jvPc", Description = "Read this carefully" },

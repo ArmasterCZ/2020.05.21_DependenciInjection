@@ -25,7 +25,7 @@ namespace TestProject2
         }
 
         [Fact]
-        public void DbWorkerGetListOfPcMock()
+        public void DbMsSql_GetListOfPc_Mock()
         {
             //arrange
             //List<PcDto> sampleData = new List<PcDto>() { new PcDto() { Id = 1, Name = "MujPc", Description = "afsddsgdfg" } }; //should be real expected data.
@@ -37,6 +37,23 @@ namespace TestProject2
             //assert
             //Assert.Equal(retData.Count, sampleData.Count);
             logger.Verify(x => x.LogInfo("Query - getting list of PC"),Times.Once);
+            logger.Verify(x => x.LogError(It.IsAny<string>()), Times.Never);
+
+        }
+
+        [Fact]
+        public void Oracle_GetListOfPc_Mock()
+        {
+            //arrange
+            //List<PcDto> sampleData = new List<PcDto>() { new PcDto() { Id = 1, Name = "MujPc", Description = "afsddsgdfg" } }; //should be real expected data.
+            List<PcDto> retData;
+
+            //act
+            retData = oracle.GetListOfPcs();
+
+            //assert
+            //Assert.Equal(retData.Count, sampleData.Count);
+            logger.Verify(x => x.LogInfo("Query - getting list of PC"), Times.Once);
             logger.Verify(x => x.LogError(It.IsAny<string>()), Times.Never);
 
         }
