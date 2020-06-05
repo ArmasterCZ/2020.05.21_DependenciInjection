@@ -9,6 +9,8 @@ namespace _2020._05._21_DependenciInjection
 {
     internal class Logger2 : ILogger
     {
+        private int usageCount = 0;
+
         public string pathToLog { get; set; }
 
         public Logger2()
@@ -18,12 +20,14 @@ namespace _2020._05._21_DependenciInjection
 
         public void LogError(string message)
         {
-            Console.WriteLine($"Lg2 error ({message})");
+            usageCount ++;
+            Console.WriteLine($"Lg2 error ({message}) {usageCount}");
         }
 
         public void LogInfo(string message)
         {
-            Console.WriteLine($"Lg2 ({message})");
+            usageCount++;
+            Console.WriteLine($"Lg2 ({message}) {usageCount}");
         }
     }
 }

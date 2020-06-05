@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2020.05.21_DependenciInjection", "2020.05.21_DependenciInjection\2020.05.21_DependenciInjection.csproj", "{B2FC5A82-A645-4CBC-B084-7A69381E3C7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{CA1C9335-D3D4-453C-ABED-6033F49A6B9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest1", "UnitTestProject1\UnitTest1.csproj", "{CA1C9335-D3D4-453C-ABED-6033F49A6B9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject2", "TestProject2\TestProject2.csproj", "{4DDAD8D0-2C82-40B8-A357-FCFCDD3DB62E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest1", "TestProject2\XUnitTest1.csproj", "{4DDAD8D0-2C82-40B8-A357-FCFCDD3DB62E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

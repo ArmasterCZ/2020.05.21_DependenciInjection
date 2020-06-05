@@ -64,12 +64,12 @@ namespace _2020._05._21_DependenciInjection
             //builder.RegisterType<Oracle>().As<IOracle>();
 
             //register specific interface for specific clase (And static string)
-            /*
+            /** /
             builder.Register(c => new Logger()).Named<ILogger>("Logger1");
             builder.Register(c => new Logger2()).Named<ILogger>("Logger2");
             builder.Register(c => new MsSql("connStringMsSq", c.ResolveNamed<ILogger>("Logger1"))).As<IMsSql>();
             builder.Register(c => new Oracle("connStringOrac", c.ResolveNamed<ILogger>("Logger2"))).As<IOracle>();
-            */
+            /**/
 
             //register specific interface for specific clase (but left string to be writen thrue resolve)
             /*

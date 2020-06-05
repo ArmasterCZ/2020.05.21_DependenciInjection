@@ -29,8 +29,9 @@ namespace _2020._05._21_DependenciInjection
 
         public void Run()
         {
-            RunXmlExample();
-            RunDbExample();
+            //RunXmlExample();
+            //RunDbExample();
+            RunDeepExample();
         }
 
         public void RunXmlExample()
@@ -92,6 +93,14 @@ namespace _2020._05._21_DependenciInjection
             }
             connectorDbRandom.ConnectToDb();
             connectorDbRandom.CreateNewPc();
+
+            Console.ReadLine();
+        }
+
+        public void RunDeepExample()
+        {
+            IDeepStructureLv1 deepStructureLv1 = container.Resolve<IDeepStructureLv1>();
+            deepStructureLv1.CallMeMayby();
 
             Console.ReadLine();
         }
